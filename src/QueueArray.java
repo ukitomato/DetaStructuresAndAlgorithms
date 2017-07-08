@@ -1,24 +1,24 @@
 
 
-public class QueeuArray {
+public class QueueArray {
     int length, front, rear;
-    Node[] queue;
+    int[] queue;
 
     // 指定された長さの配列を生成するコンストラクタ
-    QueeuArray(int len) {
-        queue = new Node[len];
+    QueueArray(int len) {
+        queue = new int[len];
         length = len;
         front = 0;
         rear = 0;
     }
 
     // データのエンキュー
-    void enqueue(Node str) {
+    void enqueue(int val) {
         if (rear + 1 == front|(rear==length-1&&front==0)) {
             System.out.println("Queue Overflow");
             System.exit(1);
         }
-        queue[rear] = str;
+        queue[rear] = val;
         if(rear==length-1) {
             rear = 0;
         }else{
@@ -28,7 +28,7 @@ public class QueeuArray {
     }
 
     // データのデキュー
-    Node dequeue() {
+    int dequeue() {
         if (rear == front) {
             System.out.println("Queue Underflow");
             System.exit(1);
@@ -44,16 +44,18 @@ public class QueeuArray {
 
     // キューの要素の表示
     void display() {
-        for (int i = front;;) {
-            System.out.print(queue[i].val + " ");
-            if (i == length - 1) {
-                i = 0;
-            } else {
-                i++;
+        if(this.rear!= this.front) {
+            for (int i = front; ; ) {
+                System.out.print(queue[i] + " ");
+                if (i == length - 1) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+                if (i == rear) break;
             }
-            if (i == rear) break;
+            System.out.println();
         }
-        System.out.println();
-
+        else System.out.println();
     }
 }

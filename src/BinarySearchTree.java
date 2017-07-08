@@ -140,6 +140,7 @@ public class BinarySearchTree {
 
     public static void main (String[] args) {
         // 課題の要件を満たすテストを行うためには、main関数で行うテストは自分で書く必要があります。
+        System.out.println("最小値："+min_bst());//空の時の最小値の探索
         // 値の挿入
         insert_bst(10);
         insert_bst(15);
@@ -152,6 +153,39 @@ public class BinarySearchTree {
         System.out.println();
 
         // その他のメソッドのテスト
+        if (search_bst(10))
+            System.out.println("Found!");       //全ての要素に探索をする
+        else
+            System.out.println("Not found!");
+        if (search_bst(15))
+            System.out.println("Found!");
+        else
+            System.out.println("Not found!");
+        if (search_bst(18))
+            System.out.println("Found!");
+        else
+            System.out.println("Not found!");
+        if (search_bst(6))
+            System.out.println("Found!");
+        else
+            System.out.println("Not found!");
+        if (search_bst(12))
+            System.out.println("Found!");
+        else
+            System.out.println("Not found!");
+        if (search_bst(20))
+            System.out.println("Found!");
+        else
+            System.out.println("Not found!");
+        if (search_bst(9))
+            System.out.println("Found!");
+        else
+
+
+
+
+
+            System.out.println("Not found!");       //存在しない時
         if (search_bst(14))
             System.out.println("Found!");
         else
@@ -160,11 +194,10 @@ public class BinarySearchTree {
             System.out.println("Found!");
         else
             System.out.println("Not found!");
-
         System.out.println("最小値："+min_bst());
 
         // 発展課題のテスト
-        delete_bst(10);
+        delete_bst(10);//根を削除
         display(root);
         System.out.println();
     }

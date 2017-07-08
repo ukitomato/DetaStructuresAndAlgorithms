@@ -2,9 +2,10 @@
 // ２分木のノードを実現するクラス
 public class Node {
     String val;
-    Node left, right;
+    int left;
+    int right;
 
-    public Node(String val, Node left, Node right) {
+    public Node(String val, int left, int right) {
         this.val = val;
         this.left = left;
         this.right = right;
